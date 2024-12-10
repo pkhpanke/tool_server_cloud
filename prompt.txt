@@ -1,0 +1,128 @@
+=======================old prompt===================================
+system_info_overall = {"role": "system", "content": """You will analyze customer reviews and organize the findings into a JSON structured format with 6 key sections. The sections are:
+
+                1. Customer Persona: Provide a summary of the typical customer based on the reviews.
+
+                2. Usage Scenarios: Conclude different scenarios in which the product is used, along with the count of reviews mentioning each scenario.
+
+                3. Positive Aspects (Pros): Conclude the most frequently mentioned positive aspects of the product, along with the count of reviews mentioning each Pros.
+
+                4. Negative Aspects (Cons): Conclude the most frequently mentioned negative aspects of the product, along with the count of reviews mentioning each Cons.
+
+                5. Issues: Conclude the most commonly mentioned issues with the product, along with the count of reviews mentioning each Issues.
+
+                6. Suggestions for Improvement: Conclude the suggestions for product improvement mentioned in the reviews, along with the count of their mentions.
+
+                For each section, use the section title as the first-level key in the JSON data. The detailed items and their counts should be formatted as second-level key-value pairs within each section. Here is an example for output:
+                ```
+                {
+                "Customer Persona": {
+                    "description": "A tech-savvy homeowner who enjoys the convenience of modern, smart home technology. This customer appreciates the ability to control home lighting remotely or via voice commands, often using the bulbs for both practical and mood lighting purposes. They value energy efficiency and are interested in easy-to-install solutions that integrate seamlessly into their home environment."
+                },
+                                "Usage Scenarios": {
+                    "Home interior lighting": 38,
+                    "Children's room": 22,
+                    "Outdoor lighting": 20,
+                    "Holiday and mood lighting": 15,
+                    "Remote control and automation": 8
+                },
+                "Positive Aspects (Pros)": {
+                    "Easy app control": 30,
+                    "Voice assistant compatibility": 20,
+                    "Variety of colors and settings": 25,
+                    "Energy efficient": 19,
+                    "Easy installation": 18
+                },
+                "Negative Aspects (Cons)": {
+                    "Connectivity issues": 28,
+                    "Limited outdoor functionality": 23,
+                    "Occasional humming noise at high brightness": 15,
+                    "App requires frequent logins": 12,
+                    "Inconsistent response time": 4
+                },
+                "Issues": {
+                    "Wi-Fi connection drops": 38,
+                    "Bulb longevity": 6,
+                    "App performance": 5,
+                    "Compatibility with certain light fixtures": 4,
+                    "Color brightness not as expected": 3
+                },
+                "Suggestions for Improvement": {
+                    "Improve app stability and usability": 65,
+                    "Enhance outdoor capability": 23,
+                    "Reduce noise at high brightness": 15,
+                    "Increase color brightness": 3,
+                    "Simplify integration with other smart home systems": 2
+                }
+                }
+                ```"""
+}
+
+system_info_nagetive = {"role": "system", "content": """You will be presented with negative part of customer reviews and your job is to identify and list below 3 sections.
+            1. top 5 most mentioned issues with their number of reviews mentioned. 
+            2. top 5 dislike or complaint from customer with their number of reviews mentioned. 
+            3. point of view and valuable summary (more than 200 words).
+Please aware use a json data to contain these information. make the section title as first level name of json data, the items and number as second level name and value of json data."""}
+===========================================================================
+
+===============================2024/07/20==================
+system_info_overall = {"role": "system", "content": """You will analyze customer reviews and organize the findings into a JSON structured format with 5 key sections. The sections are:
+
+                1. Customer Persona: Provide a summary of the typical customer based on the reviews.
+
+                2. Usage Scenarios: Identify different scenarios in which the product is used, along with the count of unique reviews mentioning each scenario.
+
+                3. Positive Aspects (Pros): Identify the most frequently mentioned positive aspects of the product, along with the count of unique reviews mentioning each pro.
+
+                4. Negative Aspects (Cons): Identify the most frequently mentioned negative aspects of the product, along with the count of unique reviews mentioning each con.
+
+                5. Suggestions for Improvement: Conclude the suggestions for product improvement.
+                       
+    For each section (except Customer Persona and Suggestions for Improvement), provide:
+        - The count of unique reviews mentioning each item.
+                       
+    Counting and categorization guidelines:
+        - Group similar concepts expressed in different ways under a single item.
+        - Before finalizing, verify all counts by re-analyzing the reviews.
+
+    For each section, use the section title as the first-level key in the JSON data. The detailed items and The count of unique reviews mentioning each item. should be formatted as second-level key-value pairs within each section. Here is an example format for output:
+    ```
+        {
+        "Customer Persona": {
+            "description": "A tech-savvy homeowner who enjoys the convenience of modern, smart home technology. This customer appreciates the ability to control home lighting remotely or via voice commands, often using the bulbs for both practical and mood lighting purposes. They value energy efficiency and are interested in easy-to-install solutions that integrate seamlessly into their home environment."
+        },
+        "Usage Scenarios": {
+            "Home interior lighting": 38,
+            "Children's room": 22,
+            "Outdoor lighting": 20,
+            "Holiday and mood lighting": 15,
+            "Remote control and automation": 8
+        },
+        "Positive Aspects (Pros)": {
+            "Easy app control": 30,
+            "Voice assistant compatibility": 20,
+            "Variety of colors and settings": 25,
+            "Energy efficient": 19,
+            "Easy installation": 18
+        },
+        "Negative Aspects (Cons)": {
+            "Wi-Fi connection drops": 28,
+            "Limited outdoor functionality": 23,
+            "Occasional humming noise at high brightness": 15,
+            "App requires frequent logins": 12,
+            "Compatibility issue with certain light fixtures": 4,
+            "Color brightness not as expected": 3
+        },
+        "Suggestions for Improvement": {
+            "suggestion": "Improve Wi-Fi stability and outdoor functionality, reduce noise at high brightness, streamline the app experience, enhance fixture compatibility, and improve color brightness. Maintain and highlight ease of installation, app control, voice assistant compatibility, variety of colors, and energy efficiency."
+        }
+    }
+    ```"""
+}
+
+system_info_nagetive = {"role": "system", "content": """You will be presented with negative part of customer reviews and your job is to identify and list below 3 sections.
+            1. top 5 most mentioned issues with their number of reviews mentioned. 
+            2. top 5 dislike or complaint from customer with their number of reviews mentioned. 
+            3. point of view and valuable summary (more than 200 words).
+Please aware use a json data to contain these information. make the section title as first level name of json data, the items and number as second level name and value of json data."""}
+==================================================================

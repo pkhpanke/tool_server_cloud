@@ -1,0 +1,22 @@
+========run the server==========
+sudo nohup python3 -u server_socket.py > server.log 2>&1 &
+================================
+
+============add a user into user_information:============
+INSERT INTO user_information (user_name, access_key, max_usage, current_usage, max_token_usage, current_token_usage) VALUES ('allison_li', 'sk-Q6qyMsryBQ5LDrIvFV3DgIJ6a718LI8NGM5iUKyXanLy0mCV', 10, 0, 100000, 0);
+============================================================
+
+============update a key:============
+UPDATE user_information SET access_key = 'vc2hgUPvpuBwwBgfQhRy93rEw8HgFJ2WNjgwjA2pCKOqFJto' WHERE user_name = 'ATL-test4';
+=====================================
+
+============update the max_usage============
+UPDATE user_information SET max_usage = 100 WHERE id = 25;
+
+UPDATE user_information
+SET max_usage = 100
+WHERE id BETWEEN 2 AND 27;
+================================================
+
+
+
