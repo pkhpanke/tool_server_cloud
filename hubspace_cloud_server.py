@@ -197,10 +197,19 @@ def generate_session_id(key):
     # Optionally, you can truncate or adjust the length. Here, we keep it as is
     # since base64 encoding of SHA-256 hash will be around 44 characters.
     return encoded.decode('utf-8')
-
 if __name__ == '__main__':
-    DatabaseHandler.initialize_pool(host="localhost", database="pso_voc_tool", user="root", password="")
-    app.run(ssl_context=('/home/lighthouse/server/ssl_key/hubspace.run.place_nginx/hubspace.run.place_bundle.crt', '/home/lighthouse/server/ssl_key/hubspace.run.place_nginx/hubspace.run.place.key'),debug=True,host='0.0.0.0',port=443)
-    # app.run(debug=True,host='0.0.0.0',port=80)
-
-
+    # 使用提供的数据库连接信息
+    DatabaseHandler.initialize_pool(
+        host="aianalysis.mysql.database.azure.com",  # 服务器地址
+        database="aianalyse",  # 数据库名称
+        user="ZDHH25U",  # 用户名
+        password="Pp2766466225.",  # 密码，你需要替换成实际的密码
+    )
+    app.run(
+        ssl_context=('/home/lighthouse/server/ssl_key/hubspace.run.place_nginx/hubspace.run.place_bundle.crt', '/home/lighthouse/server/ssl_key/hubspace.run.place_nginx/hubspace.run.place.key'),
+        debug=True,
+        host='0.0.0.0',
+        port=443
+    )
+    # 如果你不需要SSL，可以取消注释下面的代码
+    # app.run(debug=True, host='0.0.0.0', port=80)
