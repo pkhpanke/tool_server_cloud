@@ -23,7 +23,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def home():
-    return "Hello, HTTPS!"
+    return "Hello, Here is HTTP DEMO!"
 
 @app.route('/login', methods=['POST'])
 def login():
